@@ -5,6 +5,8 @@ mkdir sit737-2024-t1-prac2p
 
 cd sit737-2024-t1-prac2p
 
+## clone the repository
+
 ## Initialize a new Node.js project with default settings:
 npm init
 
