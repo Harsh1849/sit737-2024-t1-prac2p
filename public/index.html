@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Math Calculator</title>
+</head>
+<body>
+    <h1>Simple Math Calculator</h1>
+    <form id="calculatorForm">
+        <label for="num1">Enter number 1:</label>
+        <input type="number" id="num1" name="num1" required><br><br>
+
+        <label for="num2">Enter number 2:</label>
+        <input type="number" id="num2" name="num2" required><br><br>
+
+        <label for="operation">Select operation:</label>
+        <select id="operation" name="operation" required>
+            <option value="add">Add</option>
+            <option value="subtract">Subtract</option>
+            <option value="multiply">Multiply</option>
+            <option value="divide">Divide</option>
+        </select><br><br>
+
+        <button type="submit">Calculate</button>
+    </form>
+
+    <div id="result"></div>
+
+    <!-- JavaScript code for handling form submission and calculations -->
+    <script>
+        // Add an event listener to the form for submission
+        document.getElementById('calculatorForm').addEventListener('submit', function(event) {
+            // Prevent the default form submission behavior
+            event.preventDefault();
+            // Retrieve values of number 1, number 2, and selected operation
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            const operation = document.getElementById('operation').value;
+            let result;
+            
+            // Perform the corresponding calculation based on the selected operation
+            switch(operation) {
+                case 'add':
+                    result = num1 + num2;
+                    break;
+                case 'subtract':
+                    result = num1 - num2;
+                    break;
+                case 'multiply':
+                    result = num1 * num2;
+                    break;
+                case 'divide':
+                    result = num1 / num2;
+                    break;
+                default:
+                    result = 'Invalid operation';
+            }
+            
+            // Display the result inside the 'result' div
+            document.getElementById('result').textContent = `Result: ${result}`;
+        });
+    </script>
+</body>
+</html>
+
